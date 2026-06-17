@@ -1,0 +1,36 @@
+# .gitignore — system-design-bot
+# A markdown/skill content repo. Keep it focused: ignore OS junk, editor temp,
+# secrets, and the coach's scratch area. (No node/python build artifacts here.)
+
+# ── OS / filesystem cruft ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Editor / IDE temp files ─────────────────────────────────────────
+*.swp
+*.swo
+*~
+.idea/
+# NOTE: .vscode/ is intentionally NOT ignored — you may want to commit
+# shared settings (e.g. recommended extensions). The skill deliverables
+# live in .github/skills/ and .claude/skills/ and MUST stay tracked.
+
+# ── Secrets / local env (defensive; none used yet) ──────────────────
+.env
+.env.*
+*.local
+
+# ── Coach: scratch drafts (inbox is a staging area) ─────────────────
+# Keep the README; ignore loose drafts that haven't been filed yet.
+coach/inbox/*
+!coach/inbox/README.md
+
+# ── Coach: personal practice sessions ───────────────────────────────
+# Your sessions (transcripts, answers, scorecards) are TRACKED by default
+# so your progress history is versioned and backed up.
+# If you plan to SHARE / publish this repo, uncomment the two lines below
+# to keep your personal practice data out of git:
+coach/sessions/*
+!coach/sessions/README.md

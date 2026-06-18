@@ -29,10 +29,12 @@ Then start Phase 1.
    editor** — generate `design/openapi.yaml` from the §D starter and walk them in
    (`42Crunch.vscode-openapi` **Preview**, or browser **Swagger Editor**; renders in Swagger UI /
    ReDoc). Either way, the result is the API answer.
-4. **High-level design** — components + data flow as a `flowchart`. Client → LB → service →
+4. **High-level design** — components + data flow. Author it as a Mermaid `flowchart` **or**, if
+   the user would rather drag boxes, a **GUI canvas (draw.io)** — offer both and grade from the
+   diagram's embedded XML/text (see SKILL.md → *Diagram authoring*). Client → LB → service →
    store / cache / queue. Keep it coherent.
-5. **Data model & storage** — entities (`erDiagram`), SQL vs NoSQL choice + why, indexing,
-   partitioning key.
+5. **Data model & storage** — entities (Mermaid `erDiagram`, or a **draw.io** canvas — see
+   SKILL.md → *Diagram authoring*), SQL vs NoSQL choice + why, indexing, partitioning key.
 6. **Scaling & bottlenecks** — find the bottleneck, then apply caching, sharding, replication,
    read replicas, async/queues, CDN. Explain the order.
 7. **Deep dive** — 1–2 hard sub-problems specific to the problem (e.g. key generation for a URL

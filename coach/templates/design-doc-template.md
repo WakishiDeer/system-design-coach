@@ -15,12 +15,15 @@
 
 ## 3. API
 
-```
+```text
 METHOD /path
 Headers:
 Request:
 Response (status):
 ```
+
+_Or reference your own `openapi.yaml` (edited in Swagger Editor or the `42Crunch.vscode-openapi`
+extension) — the coach grades the API dimension straight from the spec._
 
 ## 4. High-level design
 

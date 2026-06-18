@@ -35,7 +35,7 @@ GitHub Copilot / Claude Code を「対話型のシステムデザイン面接官
 | `rubric/evaluation-rubric.md` | 8 項目の採点基準（Junior → Staff） |
 | `concepts/` | 学習用の概念ライブラリ（キャッシュ、シャーディング 等） |
 | `problems/` | 問題バンク（お題＋模範解答＋問題別ルーブリック） |
-| `templates/` | スコアカード／設計ドキュメント／改善履歴のひな形 |
+| `templates/` | スコアカード／設計ドキュメント／改善履歴／API設計 のひな形 |
 | `inbox/` | 下書きの一時置き場（あとでセッションへ「file」する） |
 | `sessions/` | 保存された記録：トランスクリプト、回答の版、スコアカード |
 

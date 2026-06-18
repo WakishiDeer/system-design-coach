@@ -24,7 +24,10 @@ Then start Phase 1.
    `frameworks/estimation-cheatsheet.md`.
 3. **API design** — endpoints, methods, request/response shapes, status codes, **headers**,
    idempotency, pagination, auth. (This is where form-based tools fall short; here you control
-   everything.)
+   everything.) **Hand the user `templates/api-design-template.md`** to copy & fill. If they want
+   a real, clickable spec, **guide them to the OpenAPI route**: generate an `openapi.yaml` from the
+   §D starter into their session, then preview in **Swagger UI / ReDoc** via the
+   `42Crunch.vscode-openapi` extension, or `npx @redocly/cli preview-docs openapi.yaml`.
 4. **High-level design** — components + data flow as a `flowchart`. Client → LB → service →
    store / cache / queue. Keep it coherent.
 5. **Data model & storage** — entities (`erDiagram`), SQL vs NoSQL choice + why, indexing,
@@ -38,7 +41,7 @@ Then start Phase 1.
 
 ## Per-phase control menu (show after EVERY phase)
 
-```
+```text
 Where to next?
   [1] Deeper   — harder follow-ups on this same topic
   [2] Next     — move to the next phase

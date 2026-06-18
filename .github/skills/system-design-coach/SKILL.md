@@ -50,7 +50,14 @@ Ask which mode (or infer it from the request):
    - **Revise** — save the improved answer as the next `design/vN.md`, and record the delta in
      `improvements.md` (map each change to a rubric dimension).
 5. **Capture answers** — save each design attempt as `design/v1.md`, `design/v2.md`, … using
-   `coach/templates/design-doc-template.md`. Keep `session.md` as the running transcript.
+   `coach/templates/design-doc-template.md`. For the **API design** phase, offer
+   `coach/templates/api-design-template.md` to copy & fill — or, if they want it hands-on, **walk
+   them into a live editor**: write a starter `design/openapi.yaml` (from the template's §D), then
+   give the exact steps — VS Code (`code --install-extension 42Crunch.vscode-openapi` → open the
+   file → **Preview** → **"Try it"**) or browser **Swagger Editor** (<https://editor.swagger.io>,
+   paste & edit). The user-edited **`openapi.yaml` is the API answer** — keep it at
+   `design/openapi.yaml` and grade the API dimension straight from the spec. Keep `session.md` as
+   the running transcript.
 6. **Wrap up** — score against `coach/rubric/evaluation-rubric.md` + the problem's `rubric.md`.
    Write `scorecard.md` from `coach/templates/scorecard-template.md` (overall level, 8 scores
    with evidence, strengths, gaps, prioritized next steps).
@@ -71,7 +78,9 @@ below) into a session and score it.
 ## Mode: Drill
 
 Pick one phase (e.g. estimation, API design) and run 3–5 quick reps with immediate feedback.
-Great for a targeted weakness from a past scorecard.
+Great for a targeted weakness from a past scorecard. For **API design**, hand over
+`coach/templates/api-design-template.md`, or **walk them hands-on into a live spec editor**
+(§D: VS Code `42Crunch.vscode-openapi` + Preview, or browser Swagger Editor).
 
 ## Mode: Progress
 

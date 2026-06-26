@@ -35,20 +35,25 @@ GitHub Copilot / Claude Code を「対話型のシステムデザイン面接官
 | `rubric/evaluation-rubric.md` | 8 項目の採点基準（Junior → Staff） |
 | `concepts/` | 学習用の概念ライブラリ（キャッシュ、シャーディング 等） |
 | `problems/` | 問題バンク（お題＋模範解答＋問題別ルーブリック） |
-| `templates/` | スコアカード／設計ドキュメント／改善履歴／API設計 のひな形 |
+| `templates/` | スコアカード／設計ドキュメント／改善履歴／API設計／図 のひな形 |
 | `inbox/` | 下書きの一時置き場（あとでセッションへ「file」する） |
 | `sessions/` | 保存された記録：トランスクリプト、回答の版、スコアカード |
 
-## 図はぜんぶ Mermaid（テキスト）
+## 図は draw.io 優先、Mermaid も可 (diagrams)
 
-コーチが図を「読んで・採点して・一緒に直す」ために、テキストの **Mermaid** を使います：
+Phase 4 の **高レベルアーキテクチャ（High-level architecture）** は、まず **draw.io（GUI 図）** を
+おすすめします。コーチは画像そのものではなく、保存ファイルに埋め込まれた draw.io XML / Mermaid text /
+Excalidraw JSON を読んで採点・修正します。
 
-- `flowchart` → アーキテクチャ構成 (architecture)
-- `sequenceDiagram` → リクエスト／API の流れ (request / API flow)
-- `erDiagram` → データモデル (data model)
+- **draw.io** → コンポーネントとデータフローをドラッグ操作で整理する。Phase 4 の第一候補。
+- **Mermaid** → テキストで素早く `flowchart` / `sequenceDiagram` / `erDiagram` を直す。
+- **Excalidraw** → 手描きに近い GUI 図。JSON が残るファイルならレビュー可能。
 
-draw.io / Excalidraw は「手で描く練習」には使って OK ですが、コーチはそのファイルを読めません。
-言葉で説明するか、Mermaid に写すとフィードバックできます。
+よく使うひな形：
+
+- `templates/high-level-architecture.drawio` — Phase 4 用の汎用 draw.io スターター。
+- `templates/diagram-palette.drawio` — draw.io 用の部品・矢印パレット。
+- `templates/diagram-palette.mermaid.md` — Mermaid 用のスケルトンと色分けルール。
 
 ## セッションの保存形式 (session layout)
 

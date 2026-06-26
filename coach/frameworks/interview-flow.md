@@ -29,14 +29,20 @@ Then start Phase 1.
    editor** — generate `design/openapi.yaml` from the §D starter and walk them in
    (`42Crunch.vscode-openapi` **Preview**, or browser **Swagger Editor**; renders in Swagger UI /
    ReDoc). Either way, the result is the API answer.
-4. **High-level design** — components + data flow. Author it as a Mermaid `flowchart` **or**, if
-   the user would rather drag boxes, a **GUI canvas (draw.io)** — offer both and grade from the
-   diagram's embedded XML/text (see SKILL.md → *Diagram authoring*). Client → LB → service →
-   store / cache / queue. Keep it coherent.
+4. **高レベルアーキテクチャ (High-level architecture)** — components + data flow. **draw.io is the
+   recommended first option.** Offer these choices in this order: (a) copy the generic draw.io
+   starter `templates/high-level-architecture.drawio` into the session, (b) generate a tailored
+   draw.io scaffold from the components already discussed, or (c) use a Mermaid `flowchart` if the
+   user prefers text. Grade from the diagram's embedded XML/text (see SKILL.md → *Diagram
+   authoring*). When showing the format, explain in Japanese what to draw: boxes = major
+   components/responsibilities, arrows = request/data flow, labels = read/write/async. Client → LB
+   → service → store / cache / queue. Keep it coherent.
 5. **Data model & storage** — entities (Mermaid `erDiagram`, or a **draw.io** canvas — see
    SKILL.md → *Diagram authoring*), SQL vs NoSQL choice + why, indexing, partitioning key.
-6. **Scaling & bottlenecks** — find the bottleneck, then apply caching, sharding, replication,
-   read replicas, async/queues, CDN. Explain the order.
+6. **スケーリングとボトルネック (Scaling & bottlenecks)** — find the bottleneck, then apply
+   caching, sharding, replication, read replicas, async/queues, CDN. When giving a fill-in format,
+   do not provide bare headings. For each heading, add a Japanese `ここで書くこと` note and a short
+   example so the user knows what kind of answer belongs there.
 7. **Deep dive** — 1–2 hard sub-problems specific to the problem (e.g. key generation for a URL
    shortener; the counting algorithm for a rate limiter).
 8. **Wrap-up** — failure modes, monitoring, trade-off summary, what you'd do with more time.

@@ -5,8 +5,9 @@
 
 Web ベースの学習サービスでは、UI の制約で勉強しづらいこと（API のヘッダーが書きづらい 等）が
 あります。これを解消するため、アプリではなく **エージェントのスキル** として実装しています。
-コーチ役の AI が面接官・チューター・レビュアーになり、図はテキストの **Mermaid** で描くので、
-AI が読んで採点したり一緒に修正したりできます。
+コーチ役の AI が面接官・チューター・レビュアーになり、図は **draw.io（GUI 図）** または
+**Mermaid（テキスト図）** で作ります。特に Phase 4 の **高レベルアーキテクチャ（High-level
+architecture）** は draw.io を優先し、AI が読めるソース（draw.io XML / Mermaid text）から採点・修正します。
 
 > An interactive system-design interview coach that runs inside GitHub Copilot and Claude Code.
 > No app, no hosting — the agent *is* the interviewer/tutor/reviewer; content lives in `coach/`.

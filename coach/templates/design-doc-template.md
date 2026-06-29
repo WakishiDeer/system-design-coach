@@ -27,14 +27,14 @@ extension) — the coach grades the API dimension straight from the spec._
 
 ## 4. 高レベルアーキテクチャ (High-level architecture)
 
-_Preferred for Phase 4: edit a draw.io source file such as `design/high-level-vN.drawio`, usually
+_Preferred for Phase 4: edit a draw.io source file such as `design/high-level-v{{n}}.drawio`, usually
 copied from `coach/templates/high-level-architecture.drawio`. If you prefer text, use Mermaid below._
 
 - **何を描くか:** 箱には主要コンポーネント（Component）を書きます。例: Client、API Gateway、Service、Cache、Database、Queue。
 - **矢印の意味:** 矢印にはデータフロー（Data flow）を書きます。読み取り経路（read path）、書き込み経路（write path）、非同期経路（async path）が区別できるようにラベルを付けます。
 - **足し引き:** 今回の設計に不要な箱は消し、必要な保存先・キャッシュ・キューだけを残します。
 
-- **Diagram source:**
+- **Diagram source:** draw.io = `design/high-level-v{{n}}.drawio` / Mermaid = paste below
 
 ```mermaid
 flowchart LR

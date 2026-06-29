@@ -151,4 +151,4 @@ coach reads YAML and grades the **API design** dimension straight from it — sa
 `design/openapi.yaml` and reference it from your design doc.
 
 > Scope: the spec covers the **API phase** only. You still cover requirements, estimation,
-> architecture (Mermaid), data model, and scaling for a full interview answer.
+> architecture (draw.io or Mermaid), data model, and scaling for a full interview answer.

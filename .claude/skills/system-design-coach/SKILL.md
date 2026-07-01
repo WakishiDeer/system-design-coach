@@ -46,9 +46,11 @@ Ask which mode (or infer it from the request):
 
 ## Mode: Interview
 
-1. **Choose a problem** from `coach/problems/_index.md` (let the user pick, or suggest one). Read
-   that problem's `problem.md` only — **do NOT read `reference-design.md` yet** so spoilers don't
-   leak into your prompts; consult it only for Explain / Wrap-up.
+1. **Choose a problem** from the curated bank in `coach/problems/_index.md` (let the user pick,
+   or suggest one). If the user asks for a generated/local problem, use
+   `coach/problems/local/<slug>/` directly and label it `🔹 AI-gen, review`. Read that problem's
+   `problem.md` only — **do NOT read `reference-design.md` yet** so spoilers don't leak into your
+   prompts; consult it only for Explain / Wrap-up.
    - **Ad-hoc topic:** if the user names a topic with no saved problem (e.g. "design Uber"), run
      the interview anyway — improvise the prompt + requirements from your own knowledge and grade
      against the generic `rubric/evaluation-rubric.md`. At the end, offer to save it as a real
@@ -121,8 +123,9 @@ Generate a new problem so the bank keeps growing. **Sources:**
 **Steps:**
 
 1. Pick a `slug` (kebab-case) and confirm difficulty + tags with the user.
-2. Create `coach/problems/<slug>/` with three files, mirroring an existing problem's structure
-   (e.g. `coach/problems/url-shortener/`):
+2. Create `coach/problems/local/<slug>/` with three files, mirroring an existing problem's
+   structure (e.g. `coach/problems/url-shortener/`). `coach/problems/local/` is gitignored, so
+   generated and personal practice problems stay local by default:
    - `problem.md` — prompt, functional / non-functional requirements, scale anchors, and a
      clarifying-question bank. **No answers.**
    - `reference-design.md` — full worked solution with diagrams (Mermaid is fine for compact
@@ -130,8 +133,9 @@ Generate a new problem so the bank keeps growing. **Sources:**
      scaling, a deep dive, and trade-offs. Start it with
      `> ⚠️ AI-generated — review before relying on it for grading.`
    - `rubric.md` — problem-specific must-hits per rubric dimension + common pitfalls.
-3. Add a row to `coach/problems/_index.md` (Problem | slug | difficulty | tags | Status =
-   `🔹 AI-gen, review`).
+3. Do **not** add local/generated problems to `coach/problems/_index.md` by default. That index is
+   for curated, shared problems. If the user explicitly wants to promote/share the problem, move it
+   to `coach/problems/<slug>/` and add a row to `_index.md` with Status = `🔹 AI-gen, review`.
 4. Tell the user to skim `reference-design.md` — it's the grading answer key, so a quick review
    keeps interviews accurate. It's a study aid, not gospel.
 
@@ -209,6 +213,9 @@ copy). Keep `coach/` tidy — loose drafts shouldn't linger in `inbox/`.
 - One phase at a time during interviews; always show the control menu and **wait**.
 - Never reveal `reference-design.md` content unless Explain / a direct ask / Wrap-up.
 - Always persist artifacts under `coach/sessions/<…>/` — never leave results only in chat.
+- Keep `coach/problems/_index.md` limited to curated/shared problems. Put generated or personal
+   practice problems under gitignored `coach/problems/local/<slug>/` unless the user explicitly asks
+   to promote/share them.
 - Japanese answers: use standard Japanese tech wording, with Japanese primary and English in
    parentheses on first mention (see `coach/frameworks/japanese-terminology.md`). If you present a
    format, also explain in Japanese what each item should contain or depict.

@@ -5,9 +5,11 @@
 
 Web ベースの学習サービスでは、UI の制約で勉強しづらいこと（API のヘッダーが書きづらい 等）が
 あります。これを解消するため、アプリではなく **エージェントのスキル** として実装しています。
-コーチ役の AI が面接官・チューター・レビュアーになり、図は **draw.io（GUI 図）** / **Excalidraw（手描き風 GUI 図）** または
-**Mermaid（テキスト図）** で作ります。特に Phase 4 の **高レベルアーキテクチャ（High-level architecture）** は draw.io を優先し、
-AI が読めるソース（draw.io XML / Excalidraw JSON / Mermaid text）から採点・修正します。
+コーチ役の AI が面接官・チューター・レビュアーになり、図は **draw.io（GUI 図）** / **Excalidraw（手描き風 GUI 図）** または
+
+**Mermaid（テキスト図）** で作ります。特に Phase 4 の **高レベルアーキテクチャ（High-level architecture）** は draw.io を優先し、
+
+AI が読めるソース（draw.io XML / Excalidraw JSON / Mermaid text）から採点・修正します。
 
 > An interactive system-design interview coach that runs inside GitHub Copilot and Claude Code.
 > No app, no hosting — the agent *is* the interviewer/tutor/reviewer; content lives in `coach/`.
@@ -62,15 +64,16 @@ Copilot か Claude Code のチャットで、こう話しかけるだけ：
 
 主な使い方：
 
-1. **既存問題のおすすめ** — [coach/problems/_index.md](coach/problems/_index.md) から 3〜5 件を推薦。
+1. **既存問題のおすすめ** — [coach/problems/_index.md](coach/problems/_index.md) の curated 問題を中心に 3〜5 件を推薦（必要なら `coach/problems/local/` のローカル生成問題も候補化）。
 2. **企業リサーチ** — 公式プロダクト、技術ブログ、求人、最近のニュース、通過者情報を材料にする。
-3. **新規問題の生成** — 既存問題で足りない場合、`problem.md` / `reference-design.md` / `rubric.md` を追加。
+3. **新規問題の生成** — 既存問題で足りない場合、`coach/problems/local/<slug>/` に `problem.md` / `reference-design.md` / `rubric.md` を追加（local は gitignore 対象）。
 4. **Interview への引き継ぎ** — 題材が決まったら `system-design-coach` の通常フローで模擬面接を開始。
 5. **学習ロードマップ** — 準備期間に合わせて、概念復習 → ドリル → 本番形式の順に組む。
 
 リサーチ情報は、事実・仮定・弱いシグナルを分けて扱います。通過者情報は参考にはしますが、
-本物の出題予測としては扱いません。新規生成した問題は `🔹 AI-gen, review` として追加されるので、
-採点に使う前に `reference-design.md` を軽く確認してください。
+本物の出題予測としては扱いません。新規生成した問題は `🔹 AI-gen, review` として local に保存されるので、
+採点に使う前に `reference-design.md` を軽く確認してください。共有したい問題だけ `coach/problems/<slug>/` に promote し、
+[coach/problems/_index.md](coach/problems/_index.md) に追加します。
 
 ## 構成 (layout)
 

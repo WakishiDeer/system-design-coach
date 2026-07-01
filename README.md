@@ -23,6 +23,7 @@ AI が読めるソース（draw.io XML / Excalidraw JSON / Mermaid text）から
 - 🎯 **ドリル** — 見積もり・API 設計など 1 フェーズだけ特訓
 - 📈 **進捗トラッキング** — 回答の版（v1 → v2）と伸びを記録
 - ✍️ **問題作成（Author）** — 新しいお題を生成して問題バンクに追加（外部の問題の貼り付けも可）
+- 🛠️ **実装しながら学ぶ（Build-to-Learn）** — 設計を最小構成の「動くコード」にしながら、コードとシステムデザインを一緒に学ぶ（gitignore されるラボで作業）
 
 ## 使い方 (quick start)
 
@@ -83,6 +84,8 @@ Copilot か Claude Code のチャットで、こう話しかけるだけ：
 | [.claude/skills/system-design-coach/](.claude/skills/system-design-coach/SKILL.md) | Claude Code 用スキル本体（同じ内容） |
 | [.github/skills/company-tailored-system-design/](.github/skills/company-tailored-system-design/SKILL.md) | Copilot 用：企業・業種別の選考対策スキル |
 | [.claude/skills/company-tailored-system-design/](.claude/skills/company-tailored-system-design/SKILL.md) | Claude Code 用：企業・業種別の選考対策スキル（同じ内容） |
+| [.github/skills/build-to-learn-lab/](.github/skills/build-to-learn-lab/SKILL.md) | Copilot 用：実装しながら学ぶ（Build-to-Learn）スキル |
+| [.claude/skills/build-to-learn-lab/](.claude/skills/build-to-learn-lab/SKILL.md) | Claude Code 用：実装しながら学ぶスキル（同じ内容） |
 | [coach/](coach/README.md) | 問題・ルーブリック・概念・記録などの中身 |
 
 詳しい使い方とフォルダ構成は [coach/README.md](coach/README.md) を参照してください。

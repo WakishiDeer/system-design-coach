@@ -43,6 +43,8 @@ Ask which mode (or infer it from the request):
 4. **Drill** — focused practice on one phase.
 5. **Progress** — review past scores and trends.
 6. **Author** — create a new problem (from a topic, a past session, or a pasted external problem).
+7. **Build-to-Learn** — implement a minimal, runnable version of a design while learning the code
+   (hands off to the **build-to-learn-lab** skill).
 
 ## Mode: Interview
 
@@ -138,6 +140,16 @@ Generate a new problem so the bank keeps growing. **Sources:**
    to `coach/problems/<slug>/` and add a row to `_index.md` with Status = `🔹 AI-gen, review`.
 4. Tell the user to skim `reference-design.md` — it's the grading answer key, so a quick review
    keeps interviews accurate. It's a study aid, not gospel.
+
+## Mode: Build-to-Learn (hand off)
+
+When the user wants to **implement** a design — not just diagram it — hand off to the sibling
+**build-to-learn-lab** skill. That skill builds the **smallest runnable version** of a design in a
+gitignored lab (`coach/labs/<NN>-<slug>/`), teaching the code and the concepts together: mermaid
+sketch → incremental implementation → the key code extracted into a study note → run it → optionally
+graduate the note to `coach/build-notes/`. Use it when the user says things like "実装しながら学びたい",
+"minimal 実装で動かしたい", or "turn this design into working code". Design-only practice (no code)
+stays here in Interview / Tutor / Drill.
 
 ## Diagram authoring (draw.io first for Phase 4; Mermaid or GUI elsewhere)
 

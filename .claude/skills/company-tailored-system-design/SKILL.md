@@ -63,7 +63,8 @@ Use this tone for topic confirmation:
    - Treat interview passer information as a weak signal unless it matches official role/domain clues.
 
 4. **Topic recommendation**
-   - Read `coach/problems/_index.md` and recommend 3-5 candidates.
+   - Read curated candidates from `coach/problems/_index.md`. If `coach/problems/local/` exists,
+     you may also consider those local/generated problems, clearly labeled `🔹 AI-gen, review`.
    - Rank by company/domain fit, interview stage fit, target level, status, fundamentals coverage, and
      novelty for the user.
    - Prefer `✅ full` problems for baseline practice.
@@ -89,13 +90,15 @@ Use this tone for topic confirmation:
 
 7. **New problem generation**
    - Confirm slug, difficulty, tags, and target company/domain before writing files.
-   - Create `coach/problems/<slug>/problem.md`, `reference-design.md`, and `rubric.md` following existing
-     problem structure.
+   - Create `coach/problems/local/<slug>/problem.md`, `reference-design.md`, and `rubric.md`
+     following existing problem structure. This local problem area is gitignored by default.
    - `problem.md` must contain only prompt, requirements, scale anchors, and clarifying questions. No
      answers or architecture solution.
    - `reference-design.md` must start with:
      `> ⚠️ AI-generated — review before relying on it for grading.`
-   - Add a row to `coach/problems/_index.md` with status `🔹 AI-gen, review`.
+   - Do not update `coach/problems/_index.md` by default; that index is for curated/shared
+     problems. If the user explicitly wants to promote/share the problem, move it to
+     `coach/problems/<slug>/` and add a row with status `🔹 AI-gen, review`.
    - Tell the user to skim the reference design before using it for grading.
 
 ## Output Shapes
@@ -140,7 +143,8 @@ Keep it short and action-oriented:
 - Research claims have sources, or are clearly marked as assumptions.
 - Weak interview anecdotes are not treated as facts.
 - Existing problem recommendations include status: `✅ full` or `🔹 AI-gen, review`.
-- New problem files follow the exact `coach/problems/<slug>/` three-file structure.
+- New generated problem files follow the exact `coach/problems/local/<slug>/` three-file structure
+  unless the user explicitly asks to promote/share them.
 - The answer key remains hidden during interviews.
 - The user gets a clear next action, not only a list of ideas.
 

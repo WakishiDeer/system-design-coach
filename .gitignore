@@ -27,6 +27,11 @@ $RECYCLE.BIN/
 coach/inbox/*
 !coach/inbox/README.md
 
+# ── Coach: local/generated practice problems ────────────────────────
+# Keep the curated seed bank tracked; store generated or personal
+# problem drafts here until you intentionally promote them.
+coach/problems/local/
+
 # ── Coach: personal practice sessions ───────────────────────────────
 # Your sessions (transcripts, answers, scorecards) are TRACKED by default
 # so your progress history is versioned and backed up.

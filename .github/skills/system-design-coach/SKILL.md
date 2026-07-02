@@ -61,7 +61,12 @@ Ask which mode (or infer it from the request):
    let them change it) and what that level expects. State the rules: one phase at a time; hints
    and explanations on request; the reference answer stays hidden until the end.
 3. **Create the session folder** `coach/sessions/<YYYY-MM-DD>_<slug>_<NN>/` with `session.md`
-   (log the problem + level at the top). Use the next free `NN`.
+   (log the problem + level at the top). Use the next free `NN`. Also create `assumptions.md`
+   as a non-spoiler decision-material file for target profile, tenant/organization shape, users,
+   scale anchors, buyer priorities, explicit assumptions, open questions, research/source notes,
+   and scope boundaries. Do **not** put answer-key architecture, reference-design content, or rubric
+   spoilers in `assumptions.md`. When later answers depend on context, read/update this file first
+   and cite it as assumptions, not as the solution.
 4. **Run the phases** from `coach/frameworks/interview-flow.md`, **one at a time**. After each
    phase, show the **control menu** and wait for the user's choice:
    ```
@@ -225,6 +230,10 @@ copy). Keep `coach/` tidy — loose drafts shouldn't linger in `inbox/`.
 - One phase at a time during interviews; always show the control menu and **wait**.
 - Never reveal `reference-design.md` content unless Explain / a direct ask / Wrap-up.
 - Always persist artifacts under `coach/sessions/<…>/` — never leave results only in chat.
+- Keep session premises in `coach/sessions/<…>/assumptions.md` as non-spoiler decision material.
+   Use it for target profile, company/domain context, tenant shape, users, scale anchors, buyer
+   priorities, explicit assumptions, open questions, and source notes. Do not include answer-key
+   architecture or `reference-design.md` content there.
 - Keep `coach/problems/_index.md` limited to curated/shared problems. Put generated or personal
    practice problems under gitignored `coach/problems/local/<slug>/` unless the user explicitly asks
    to promote/share them.

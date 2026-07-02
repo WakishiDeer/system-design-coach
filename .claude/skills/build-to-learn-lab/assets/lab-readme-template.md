@@ -8,6 +8,7 @@
 - **Run:** `<command>`
 - **Source:** `<problem / pattern / topic / past session>`
 - **Study note:** `note.md` → graduates to `coach/build-notes/<slug>.md`
+- **未解決の疑問 (open questions):** `<count>` — 詳細は `note.md` の疑問メモ。最後に概念ノート化する。
 
 ## 最小スコープ (minimal scope)
 
@@ -23,6 +24,7 @@
 - [ ] M2 — `<next increment>`
 - [ ] M3 — …
 - [ ] Full run — end-to-end run recipe captured in `note.md`
+- [ ] 概念ノート — 疑問メモを視覚的な概念ノートにまとめる（`note.md` §5）
 - [ ] Graduate — copy note to `coach/build-notes/` + add `_index.md` row
 
 > 使い方: マイルストーンを 1 つずつ実装 → 動かす → チェック。中断するときは Status と Next action を

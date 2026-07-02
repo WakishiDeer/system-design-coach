@@ -64,6 +64,8 @@ For each milestone, in order:
    `coach/concepts/*` file. Keep it to what this milestone needs.
 2. **Update the diagram** to highlight the piece being added (add or annotate the node / edge).
 3. **Implement** the minimal code inside the lab. Smallest change that makes the milestone runnable.
+   **Comment it generously for learning** — explain what each part does and why, in the user's
+   language. These teaching comments are the point, so don't strip them for brevity.
 4. **Extract** the necessary code into the build note (`note.md`): paste the key snippet, add a short
    "why it matters" and any gotcha. This is the "コードの必要部分を取って md にまとめる" step — do it
    now, not at the end.
@@ -82,12 +84,33 @@ For each milestone, in order:
 
 Update the lab `README.md` checklist at the end of each milestone so the build stays resumable.
 
+### 4b. Concept questions (疑問メモ → 概念ノート)
+
+The user can drop a concept / terminology question **at any time** during the build (not only from the
+menu). Handle it without losing momentum:
+
+1. **Log it** right away to `note.md`'s `## 疑問メモ (concept Q&A log)`: the question in the user's
+   words + a short, plain answer. Optionally note which milestone it came up in.
+2. **Answer briefly** and return to the build — depth can wait for the concept note.
+3. **Keep them visible.** Note the open-question count in the lab `README.md` so a resumed session
+   remembers to circle back.
+
+At wrap-up these get synthesized into a visual `概念ノート` — see **step 6** below.
+
 ### 5. Full run
 
 When the milestones are done, run the whole slice end to end. Capture the exact **run recipe** (setup
 + command + expected output) in the build note so it can be reproduced later.
 
-### 6. Graduate the note
+### 6. Visual concept note (疑問メモ → 概念ノート)
+
+Turn the running `疑問メモ` into a `## 概念ノート` section that's genuinely visual and easy to grasp:
+a mermaid concept map of how the terms connect (a `flowchart` of concepts, or a `mindmap`), plus small
+comparison tables for "A vs B" questions, each answer linking `coach/concepts/*`. This is the payoff of
+logging questions as you go — the user gets one clear, skimmable map of everything they asked about.
+Keep the language plain and beginner-friendly.
+
+### 7. Graduate the note
 
 If the user wants to keep it:
 
@@ -106,3 +129,5 @@ and the inbox "file my draft").
 - If a real external dependency (DB, broker) is needed, prefer a single `docker run` or a lightweight
   local equivalent, and note it in the run recipe.
 - Every milestone should be runnable within a few seconds; if it isn't, the slice is too big — cut it.
+- Comment the code generously for learning — the lab is a teaching artifact, so explanatory comments
+  are a feature, not clutter.

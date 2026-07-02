@@ -54,11 +54,15 @@ Follow [build flow](./references/build-flow.md) for the full script. In short:
 3. **Milestone plan** — break it into small, independently runnable increments; save the checklist in
    the lab `README.md` (copy [lab README template](./assets/lab-readme-template.md)).
 4. **Incremental build loop** — for each milestone: **explain** the concept / terminology → **update
-   the diagram** → **implement** the minimal code in the lab → **extract** the necessary code into the
-   build note ([build note template](./assets/build-note-template.md)) with a short "why it matters" →
-   **run / verify** it (terminal, show expected output) → show the control menu and **wait**.
+   the diagram** → **implement** the minimal code in the lab (**comment it generously for learning**)
+   → **extract** the necessary code into the build note
+   ([build note template](./assets/build-note-template.md)) with a short "why it matters" → **run /
+   verify** it (terminal, show expected output) → show the control menu and **wait**.
 5. **Full run** — run the whole slice end to end; record the exact run recipe.
-6. **Graduate the note** — copy the finished build note into `coach/build-notes/<slug>.md` and add a
+6. **Visual concept note** — synthesize the `疑問メモ` (concept questions logged during the build) into
+   a beginner-friendly **概念ノート**: a mermaid concept map plus short comparison tables, linking the
+   matching `coach/concepts/*`.
+7. **Graduate the note** — copy the finished build note into `coach/build-notes/<slug>.md` and add a
    row to `coach/build-notes/_index.md`.
 
 ### Control menu (show after every milestone)
@@ -72,13 +76,27 @@ Follow [build flow](./references/build-flow.md) for the full script. In short:
 [6] Pause    — save progress (update the tracker) and stop
 ```
 
+＋ **概念の質問はいつでもどうぞ。** メニュー待ちでなくても、疑問が湧いたら気軽に聞いてください。
+
+### Concept questions (capture anytime → visual note at the end)
+
+When the user asks a concept / terminology question mid-build — at any time, not just from the menu:
+
+1. **Log it immediately** to the build note's `## 疑問メモ (concept Q&A log)` section (the question +
+   a short, plain answer), so nothing lives only in chat.
+2. **Answer briefly** and get back to the build — don't let one question derail the milestone.
+3. **At wrap-up, synthesize** the whole `疑問メモ` into a visual `## 概念ノート`: a mermaid concept map
+   (how the terms relate) plus short comparison tables, in plain language, linking `coach/concepts/*`.
+   This is the "最後に視覚的・わかりやすいノート化する" step.
+
 ## Artifacts (all inside the lab, except the graduated note)
 
 - `coach/labs/<NN>-<slug>/README.md` — progress tracker (from
   [lab README template](./assets/lab-readme-template.md)).
 - `coach/labs/<NN>-<slug>/note.md` — the growing study note (from
   [build note template](./assets/build-note-template.md)): mermaid + JP/EN terminology + extracted
-  code + concept links + run recipe.
+  code + concept links + run recipe, plus a running `疑問メモ` (concept Q&A log) that becomes a visual
+  `概念ノート` at wrap-up.
 - `coach/labs/<NN>-<slug>/src/…` (or the stack's idiomatic layout) — the minimal runnable code.
 - Graduated copy: `coach/build-notes/<slug>.md` + a row in `coach/build-notes/_index.md`.
 
@@ -94,6 +112,13 @@ Follow [build flow](./references/build-flow.md) for the full script. In short:
   leave the note until the end.
 - **Teach the terms.** Introduce concepts with `日本語（English）` and link the matching
   `coach/concepts/*` file; if a relevant concept file is missing, say so.
+- **Capture concept questions → visual note.** Whenever the user asks a concept / terminology question
+  mid-build (any time, not just via the menu), log it to the note's `疑問メモ` with a short answer and
+  keep moving. At wrap-up, turn the `疑問メモ` into a visual, beginner-friendly `概念ノート` (mermaid
+  concept map + comparison tables) — never leave questions answered only in chat.
+- **Comment code for learning.** Write generous, explanatory comments in the lab code — say what each
+  part does and why (the point is teaching, not production terseness). Keep comments in the user's
+  language, and carry the key ones into the extracted snippets in the note.
 - **Reuse diagram conventions** from `coach/templates/diagram-palette.mermaid.md` (write = red, read =
   green, async = purple; fills per component) so lab diagrams read like the rest of the coach.
 - **Keep the tracker current.** Update the lab `README.md` checklist every milestone so the build is

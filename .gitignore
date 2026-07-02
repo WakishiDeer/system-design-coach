@@ -32,6 +32,13 @@ coach/inbox/*
 # problem drafts here until you intentionally promote them.
 coach/problems/local/
 
+# ── Coach: build-to-learn labs (runnable scratch projects) ──────────
+# The build-to-learn-lab skill writes real, runnable code + local deps
+# here, one folder per build. Keep the README; ignore everything else.
+# Finished study notes graduate to the tracked coach/build-notes/ area.
+coach/labs/*
+!coach/labs/README.md
+
 # ── Coach: personal practice sessions ───────────────────────────────
 # Your sessions (transcripts, answers, scorecards) are TRACKED by default
 # so your progress history is versioned and backed up.

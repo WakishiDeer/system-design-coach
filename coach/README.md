@@ -24,6 +24,7 @@ GitHub Copilot / Claude Code を「対話型のシステムデザイン面接官
 | **Drill** | 1 フェーズだけ集中特訓（見積もり、API 設計 など） |
 | **Progress** | 過去の採点と伸びを振り返る |
 | **Author** | 新しい問題を作る（お題名／前回のセッション／外部からの貼り付け） |
+| **Build-to-Learn** | 設計を最小構成で動くコードにしながら学ぶ（`build-to-learn-lab` スキルへ引き継ぎ） |
 
 ## フォルダ構成 (what's here)
 
@@ -38,6 +39,8 @@ GitHub Copilot / Claude Code を「対話型のシステムデザイン面接官
 | `templates/` | スコアカード／設計ドキュメント／改善履歴／API設計／図 のひな形 |
 | `inbox/` | 下書きの一時置き場（あとでセッションへ「file」する） |
 | `sessions/` | 保存された記録：トランスクリプト、回答の版、スコアカード |
+| `labs/` | 「実装しながら学ぶ」作業場（gitignored、README だけ tracked） |
+| `build-notes/` | ラボから卒業した学習まとめ（mermaid＋コード抜粋＋用語） |
 
 ## 図は draw.io 優先、Mermaid も可 (diagrams)
 
